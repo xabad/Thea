@@ -1,21 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="cn.xabad.thea.sample.MainActivity"
-    >
+    android:background="@android:color/white"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+    <FrameLayout
+        android:id="@+id/id_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/ll_main_tab"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+        <View
+            android:id="@+id/aty_main_view"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/grey_light_3"/>
+
+        <devlight.io.library.ntb.NavigationTabBar
+            android:id="@+id/ntb_main"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_height"
+            custom:ntb_animation_duration="0"
+            custom:ntb_badge_bg_color="@color/red"
+            custom:ntb_badge_gravity="top"
+            custom:ntb_badge_position="right"
+            custom:ntb_badge_title_color="@android:color/white"
+            custom:ntb_badge_size="10sp"
+            custom:ntb_badged="true"
+            custom:ntb_scaled="true"
+            custom:ntb_swiped="true"
+            custom:ntb_tinted="true"
+            custom:ntb_bg_color="@android:color/white"
+            custom:ntb_inactive_color="@color/black_888"
+            custom:ntb_active_color="@android:color/black"
+            custom:ntb_title_mode="all"
+            custom:ntb_titled="true"/>
+    </LinearLayout>
+</RelativeLayout>
