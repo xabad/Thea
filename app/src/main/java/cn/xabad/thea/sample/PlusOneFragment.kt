@@ -18,7 +18,6 @@ import kotlinx.android.synthetic.main.fragment_plus_one.one_button
  * create an instance of this fragment.
  */
 class PlusOneFragment : Fragment() {
-    // The URL to +1.  Must be a valid URL.
     private val PLUS_ONE_URL = "http://developer.android.com"
     // TODO: Rename and change types of parameters
     private var mParam1: String? = null
@@ -28,29 +27,22 @@ class PlusOneFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (arguments != null) {
-            mParam1 = arguments.getString(ARG_PARAM1)
-            mParam2 = arguments.getString(ARG_PARAM2)
+        arguments?.let {
+            mParam1 = it.getString(ARG_PARAM1)
+            mParam2 = it.getString(ARG_PARAM2)
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        val view = inflater!!.inflate(R.layout.fragment_plus_one, container, false)
-        return view
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        return inflater.inflate(R.layout.fragment_plus_one, container, false)
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         one_button.text = mParam1
     }
 
-    override fun onResume() {
-        super.onResume()
-    }
-
-    // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
         if (mListener != null) {
             mListener!!.onFragmentInteraction(uri)

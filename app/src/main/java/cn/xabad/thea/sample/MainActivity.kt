@@ -2,14 +2,12 @@ package cn.xabad.thea.sample
 
 import android.graphics.Color
 import android.net.Uri
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.FragmentTransaction
+import android.support.v7.app.AppCompatActivity
 import cn.xabad.thea.sample.PlusOneFragment.OnFragmentInteractionListener
 import devlight.io.library.ntb.NavigationTabBar
 import kotlinx.android.synthetic.main.activity_main.ntb_main
-import java.util.concurrent.TimeUnit
-import kotlin.concurrent.timer
 
 class MainActivity : AppCompatActivity(), OnFragmentInteractionListener {
     override fun onFragmentInteraction(uri: Uri) {
